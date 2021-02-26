@@ -29,7 +29,7 @@ const People = () =>{
     useEffect(() =>{setMapPeople(people.map((m) => {
         const linkto=`/people/${m.id}`
         return (
-       <div className="card mb-3" style={cardStyleStyle} key={m.id}>
+       <div className="card mb-3 border-success" style={cardStyleStyle} key={m.id}>
        <div className="card-body">
        
         <h5 className="card-title">{m.name}</h5>

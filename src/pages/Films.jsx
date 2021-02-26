@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 
 const Films = () =>{
+    const {pageName} = useParams();
     const [films, setFilms]=useState([])
  
     const [mapFilms, setMapFilms] = useState([]);
@@ -29,7 +30,7 @@ const Films = () =>{
     useEffect(() =>{setMapFilms(films.map((m) => {
         const linkto=`/films/${m.id}`
         return (
-       <div className="card mb-3" style={cardStyleStyle} key={m.id}>
+       <div className="card mb-3 border-success" style={cardStyleStyle} key={m.id}>
        <div className="card-body">
        
         <h5 className="card-title">{m.title}</h5>
@@ -40,9 +41,8 @@ const Films = () =>{
        </div>
        
            )}))}, [films])
+    
     return (
-        
-  
          <div className="d-flex flex-wrap justify-content-start" style={styleCardsFilm}>
         {mapFilms}
          </div>

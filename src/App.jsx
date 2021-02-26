@@ -6,7 +6,7 @@ import Film from "./pages/Film";
 import NavBar from './components/NavBar';
 import People from "./pages/People"
 import Person from './pages/Person';
-
+import UnknownPage from './pages/UnknownPage';
 
 const App = () => {
 
@@ -59,6 +59,9 @@ const App = () => {
             <Route exact path="/people/:pageName">
                {()=><Person />} 
 
+            </Route>
+            <Route exact path="/:pageName">
+                {()=><UnknownPage pageType="subpage" />}
             </Route>
        </Switch>
        </BrowserRouter>
